@@ -1,0 +1,22 @@
+fileFormatVersion: 2
+guid: fb6a547be468c334192577c74ac6e1b4
+TrueTypeFontImporter:
+  externalObjects: {}
+  serializedVersion: 4
+  fontSize: 16
+  forceTextureCase: -2
+  characterSpacing: 0
+  characterPadding: 1
+  includeFontData: 1
+  fontNames:
+  - Playa Extended
+  fallbackFontReferences:
+  - {fileID: 12800000, guid: 25bcfee53f99e344581174475328e0b5, type: 3}
+  customCharacters: 
+  fontRenderingMode: 0
+  ascentCalculationMode: 1
+  useLegacyBoundsCalculation: 0
+  shouldRoundAdvanceValue: 1
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
