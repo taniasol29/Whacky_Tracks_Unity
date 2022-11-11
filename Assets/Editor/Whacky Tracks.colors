@@ -1,0 +1,29 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &1
+MonoBehaviour:
+  m_ObjectHideFlags: 52
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 12323, guid: 0000000000000000e000000000000000, type: 0}
+  m_Name: Whacky Tracks
+  m_EditorClassIdentifier: 
+  m_Presets:
+  - m_Name: Mauve
+    m_Color: {r: 0.827451, g: 0.69411767, b: 0.7607843, a: 1}
+  - m_Name: Lavender
+    m_Color: {r: 0.75686276, g: 0.5921569, b: 0.8235294, a: 1}
+  - m_Name: Black
+    m_Color: {r: 0.12941177, g: 0.08235294, b: 0.13333334, a: 1}
+  - m_Name: Orchid
+    m_Color: {r: 0.38039216, g: 0.21176471, b: 0.34901962, a: 1}
+  - m_Name: Mint
+    m_Color: {r: 0.9411765, g: 0.96862745, b: 0.8784314, a: 1}
+  - m_Name: Lilac
+    m_Color: {r: 0.7372549, g: 0.5882353, b: 0.7921569, a: 1}
+  - m_Name: KellyGreen
+    m_Color: {r: 0.58431375, g: 0.7294118, b: 0.38039216, a: 1}
