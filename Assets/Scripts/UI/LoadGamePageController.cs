@@ -12,6 +12,7 @@ public class LoadGamePageController : MonoBehaviour
 
     public UnityEvent GoBackButtonClicked;
     public UnityEvent NewPlayerButtonClicked;
+    public UnityEvent LoadGameButtonClicked;
 
     void OnClickGoBackButtton()
     {
@@ -22,17 +23,18 @@ public class LoadGamePageController : MonoBehaviour
     {
         NewPlayerButtonClicked?.Invoke();
     }
+
+    private void OnClickLoadGameButton()
+    {
+        LoadGameButtonClicked?.Invoke();
+    }
+
     private void Awake()
     {
         goBackButton.onClick.AddListener(OnClickGoBackButtton);
         newPlayerButton.onClick.AddListener(OnClickNewPlayerButton);
+        loadGameButton.onClick.AddListener(OnClickLoadGameButton);
     }
-    
-    void Start()
-    {
-        
-    }
-
     
     void Update()
     {

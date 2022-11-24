@@ -60,7 +60,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.38039216, g: 0.21176471, b: 0.34901962, a: 0.41960785}
+  m_Color: {r: 0.38039216, g: 0.21176471, b: 0.34901962, a: 0.56078434}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -417,8 +417,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: Main Menu
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 80af2f0a058a06242ac57f98a55333b8, type: 2}
-  m_sharedMaterial: {fileID: 7303916514229743266, guid: 80af2f0a058a06242ac57f98a55333b8, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: dfbf5398c7cc04b49a442c26b1916e2f, type: 2}
+  m_sharedMaterial: {fileID: 7303916514229743266, guid: dfbf5398c7cc04b49a442c26b1916e2f, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
