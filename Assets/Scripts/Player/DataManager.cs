@@ -1,6 +1,9 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using System.IO;
+using System;
+using System.Text;
 
 public class DataManager 
 {
@@ -27,7 +30,7 @@ public class DataManager
     {
         // création de nouvelle instance de Player Data
         PlayerData data = new PlayerData(n);
-        // sauvegarder l'instance dans un fichier sur HDD
+        data.SavePlayerData();
 
         return data;
     }

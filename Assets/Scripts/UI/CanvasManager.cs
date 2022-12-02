@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class CanvasManager : MonoBehaviour
 {
@@ -10,12 +11,8 @@ public class CanvasManager : MonoBehaviour
     [SerializeField] private ChoosePlayerPageController choosePlayerPage;
     [SerializeField] private MainMenuPageController mainMenuPage;
 
-    PlayerData data = new PlayerData("John"); //TS
-
     private void Awake()
     {
-        Debug.Log("last connection: " + data.LastConnection); //TS
-
         homePage.StartButtonClicked.AddListener(ShowLoadGamePage);
 
         loadGamePage.GoBackButtonClicked.AddListener(ShowHomePage);
@@ -25,12 +22,20 @@ public class CanvasManager : MonoBehaviour
         newPlayerPage.GoBackButtonClicked.AddListener(ShowHomePage);
         newPlayerPage.EnterButtonClicked.AddListener(ShowMainMenuPage);
 
+        mainMenuPage.QuitButtonClicked.AddListener(Quit);
+        mainMenuPage.PlayButtonClicked.AddListener(LoadGameScene);
+
         choosePlayerPage.GoBackButtonClicked.AddListener(ShowHomePage);
     }
 
     void Start()
     {
         ShowHomePage();
+    }
+
+    public void LoadGameScene()
+    {
+        SceneManager.LoadScene(1);
     }
 
     public void ShowChoosePlayerPage()
@@ -62,5 +67,13 @@ public class CanvasManager : MonoBehaviour
         loadGamePage.gameObject.SetActive(false);
         choosePlayerPage.gameObject.SetActive(false);
         homePage.gameObject.SetActive(true);
+    }
+
+    public void Quit()
+    {
+#if UNITY_EDITOR
+        UnityEditor.EditorApplication.isPlaying = false;
+#endif
+        Application.Quit();
     }
 }

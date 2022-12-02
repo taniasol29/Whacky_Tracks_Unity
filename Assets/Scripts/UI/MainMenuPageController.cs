@@ -12,14 +12,21 @@ public class MainMenuPageController : MonoBehaviour
     [SerializeField] private Button quitButton;
 
     public UnityEvent QuitButtonClicked;
+    public UnityEvent PlayButtonClicked;
 
-    void Start()
+    void OnQuitButton()
     {
-        
+        QuitButtonClicked?.Invoke();
     }
 
-    void Update()
+    private void OnPlayButton()
     {
-        
+        PlayButtonClicked?.Invoke();
+    }
+
+    private void Awake()
+    {
+        quitButton.onClick.AddListener(OnQuitButton);
+        playButton.onClick.AddListener(OnPlayButton);
     }
 }
