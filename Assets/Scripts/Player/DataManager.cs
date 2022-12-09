@@ -8,6 +8,10 @@ using System.Text;
 public class DataManager 
 {
     private static DataManager _instance = null;
+
+    public PlayerData CurrentPlayer = null;
+
+    public List<PlayerData> AllPlayers = new List<PlayerData>();
     public static DataManager Instance 
     { 
         get 
@@ -23,15 +27,40 @@ public class DataManager
         }
     }   
     
-    private DataManager() { }
+    private DataManager() 
+    {
+        LoadExistingPlayers();
+    }
 
-    // fonction pour créer un nouvel utilisateur
+    // Fonction pour créer un nouvel utilisateur
     public PlayerData NewPlayer(string n)
     {
-        // création de nouvelle instance de Player Data
-        PlayerData data = new PlayerData(n);
-        data.SavePlayerData();
+        // Création de nouvelle instance de Player Data
+        PlayerData newPlayer = new PlayerData(n);
+        newPlayer.SavePlayerData();
 
-        return data;
+        // Initialisation du personnage actuel
+        CurrentPlayer = newPlayer;
+
+        return newPlayer;
+    }
+
+    private void LoadExistingPlayers()
+    {
+        // Initialisation du chemin du dossier de stockage des personnages
+        var path = Application.persistentDataPath;
+        foreach(var filePath in Directory.EnumerateFiles(path))
+        {
+            Debug.Log(filePath);
+            // Lire le contenu du fichier courant
+            var fileContent = File.ReadAllText(filePath);
+            Debug.Log(fileContent);
+
+            // Désérialiser le contenu dans une instance de PlayerData
+            var playerData = JsonUtility.FromJson<PlayerData>(fileContent);
+            // Ajout de l'instance à la liste des personnages
+            AllPlayers.Add(playerData);
+
+        }
     }
 }

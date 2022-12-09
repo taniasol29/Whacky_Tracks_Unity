@@ -55,7 +55,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &5606201091987727345
 RectTransform:
   m_ObjectHideFlags: 0
@@ -131,9 +131,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _newPlayerName: {fileID: 3555156896079826687}
-  emptyFieldMessage: {fileID: 280230776993343012}
-  enterButton: {fileID: 4757546190716284783}
-  goBackButton: {fileID: 8520257368937364312}
+  _emptyFieldMessage: {fileID: 280230776993343012}
+  _enterButton: {fileID: 4757546190716284783}
+  _goBackButton: {fileID: 8520257368937364312}
   EnterButtonClicked:
     m_PersistentCalls:
       m_Calls: []
@@ -310,10 +310,10 @@ RectTransform:
   m_Father: {fileID: 6014432767669304143}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 80}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 350, y: -252.5}
+  m_SizeDelta: {x: 700, y: 80}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &896223185602607659
 CanvasRenderer:
@@ -775,10 +775,10 @@ RectTransform:
   m_Father: {fileID: 6014432767669304143}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 100}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 350, y: -157.5}
+  m_SizeDelta: {x: 700, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &2231865932970239963
 CanvasRenderer:

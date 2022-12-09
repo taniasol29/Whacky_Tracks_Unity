@@ -8,10 +8,10 @@ using TMPro;
 public class NewPlayerPageController : MonoBehaviour
 {
     public TMP_InputField _newPlayerName;
-    public GameObject emptyFieldMessage;
+    public GameObject _emptyFieldMessage;
 
-    [SerializeField] private Button enterButton; // refaire avec des _HHHH
-    [SerializeField] private Button goBackButton;
+    [SerializeField] private Button _enterButton; // refaire avec des _HHHH
+    [SerializeField] private Button _goBackButton;
 
     public UnityEvent EnterButtonClicked;
     public UnityEvent GoBackButtonClicked;
@@ -28,12 +28,12 @@ public class NewPlayerPageController : MonoBehaviour
 
         if (string.IsNullOrEmpty(name))
         {
-            emptyFieldMessage.SetActive(true);
+            _emptyFieldMessage.SetActive(true);
             //Debug.LogWarning("Veuillez saisir un nom"); // afficher element text à l'écran que le champs est vide 
         }
         else
         {
-            emptyFieldMessage.SetActive(false);
+            _emptyFieldMessage.SetActive(false);
             //lancer l'ordre de sauvegarde de nouvel utilisateur
             DataManager.Instance.NewPlayer(name);
             // déclanchement de passage à la page suivante
@@ -43,13 +43,8 @@ public class NewPlayerPageController : MonoBehaviour
 
     void Awake()
     {
-        emptyFieldMessage.SetActive(false);
-        goBackButton.onClick.AddListener(OnClickGoBackButtton);
-        enterButton.onClick.AddListener(OnClickEnterButtton);
-    }
-
-    void Update()
-    {
-        
+        _emptyFieldMessage.SetActive(false);
+        _goBackButton.onClick.AddListener(OnClickGoBackButtton);
+        _enterButton.onClick.AddListener(OnClickEnterButtton);
     }
 }

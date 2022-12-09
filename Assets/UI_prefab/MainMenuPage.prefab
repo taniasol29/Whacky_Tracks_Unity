@@ -384,8 +384,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 1}
   m_AnchorMax: {x: 0.5, y: 1}
-  m_AnchoredPosition: {x: 0, y: -200}
-  m_SizeDelta: {x: 800, y: 180}
+  m_AnchoredPosition: {x: 0, y: -170}
+  m_SizeDelta: {x: 900, y: 200}
   m_Pivot: {x: 0.5, y: 1}
 --- !u!222 &6101387690196187305
 CanvasRenderer:
@@ -442,7 +442,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 180
+  m_fontSize: 200
   m_fontSizeBase: 36
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -576,7 +576,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &9086120699863489784
 RectTransform:
   m_ObjectHideFlags: 0
@@ -620,7 +620,11 @@ MonoBehaviour:
   playButton: {fileID: 2764361996630339533}
   optionsButton: {fileID: 1343704092040221610}
   quitButton: {fileID: 4008049422302686573}
+  welcomeTexte: {fileID: 2949084403296979563}
   QuitButtonClicked:
+    m_PersistentCalls:
+      m_Calls: []
+  PlayButtonClicked:
     m_PersistentCalls:
       m_Calls: []
 --- !u!1 &7178660810321952983

@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.UI;
@@ -10,6 +11,7 @@ public class MainMenuPageController : MonoBehaviour
     [SerializeField] private Button playButton;
     [SerializeField] private Button optionsButton;
     [SerializeField] private Button quitButton;
+    [SerializeField] private TMP_Text welcomeTexte;
 
     public UnityEvent QuitButtonClicked;
     public UnityEvent PlayButtonClicked;
@@ -28,5 +30,15 @@ public class MainMenuPageController : MonoBehaviour
     {
         quitButton.onClick.AddListener(OnQuitButton);
         playButton.onClick.AddListener(OnPlayButton);
+    }
+
+    private void OnEnable()
+    {
+        welcomeTexte.text = $"Welcome {DataManager.Instance.CurrentPlayer.Name}";
+    }
+
+    private void OnDisable()
+    {
+        
     }
 }

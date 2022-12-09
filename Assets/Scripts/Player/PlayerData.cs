@@ -5,12 +5,13 @@ using System.Text;
 using UnityEngine;
 using System.IO;
 
+[Serializable]
 public class PlayerData
 {
-    private string _name;
-    private List<int> _scores = new List<int>();
-    private long _lastConnection;
-    private long _creationTime;
+    [SerializeField] private string _name;
+    [SerializeField] private List<int> _scores = new List<int>();
+    [SerializeField] private long _lastConnection;
+    [SerializeField] private long _creationTime;
 
     public PlayerData(string name)
     {
@@ -22,6 +23,7 @@ public class PlayerData
     public string Name { get => _name; set => _name = value; }
     public List<int> Scores { get => _scores; set => _scores = value; }
     public long LastConnection { get => _lastConnection; set => _lastConnection = value; } 
+    public long CreationTime {  get => _creationTime; set => _creationTime = value; }
 
     
     // This function saves player data in persistant data path
@@ -34,7 +36,8 @@ public class PlayerData
     public void SavePlayerData()
     {
         // Preparation du chemin du sauvegarde des données
-        var path = $"{Application.persistentDataPath}/player-{_creationTime}.txt";
+        //var path = $"{Application.persistentDataPath}/player-{_creationTime}.txt";
+        var path = $"{Application.persistentDataPath}/player-{_creationTime}.json";
 
         // Préaparation des données à sauvegarder
         // V1:
@@ -47,16 +50,21 @@ public class PlayerData
         //playerDataStr += data.LastConnection;
 
         // V2:
-        StringBuilder sb = new StringBuilder();
-        sb.AppendLine(_name);
-        foreach (var s in _scores)
-        {
-            sb.Append(s + ' ');
-        }
-        sb.AppendLine();
-        sb.AppendLine(_lastConnection.ToString());
-        sb.AppendLine(_creationTime.ToString());
-        var playerDataStr = sb.ToString();
+        //StringBuilder sb = new StringBuilder();
+        //sb.AppendLine(_name);
+        //foreach (var s in _scores)
+        //{
+        //    sb.Append(s + ' ');
+        //}
+        //sb.AppendLine();
+        //sb.AppendLine(_lastConnection.ToString());
+        //sb.AppendLine(_creationTime.ToString());
+        //var playerDataStr = sb.ToString();
+
+        // Serialisation JSON
+        var playerDataStr = JsonUtility.ToJson(this, true);
+
+        // Peut crypter les données ici 
 
         // sauvegarder l'instance dans un fichier sur HDD
         File.WriteAllText(path, playerDataStr);
