@@ -17,7 +17,7 @@ public class FadeScreen : MonoBehaviour
 
     void Update()
     {
-        if (Time.time - startTime >= 2.0f) { startFade = true; }
+        if (Time.time - startTime >= 1.0f) { startFade = true; }
 
         if (startFade)
         {

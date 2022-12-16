@@ -82,8 +82,6 @@ public class Follow : MonoBehaviour
         Show(previous);
         Show(current);
         Show(next);
-
-
     }
 
 
@@ -123,10 +121,6 @@ public class Follow : MonoBehaviour
                     Debug.Log("victory");
                 }
 
-
-
-                
-
                 if (path)// if path is valid object
                 {
                     if (!ispressed)
@@ -163,23 +157,21 @@ public class Follow : MonoBehaviour
                             transform.rotation = Quaternion.Slerp(transform.rotation, rotation, rotationSpeed * Time.deltaTime);
                         }
 
-
                         if (distance <= threshhold) // if target is reached
                         {
-                            ++pointIndex;//set target to next target
+                            ++pointIndex; //set target to next target
                         }
-
 
                         if (pointIndex > path.getSize())//last point
                         {
                             //reset to next prefab
                             pointIndex = 1;
-                            path = null;//invalidate path
+                            path = null; //invalidate path
 
                         }
                     }
                 }
-                else//forward motion
+                else //forward motion
                 {
                     transform.position += Vector3.forward * speed * Time.deltaTime;
                 }
@@ -188,8 +180,6 @@ public class Follow : MonoBehaviour
                     CountDown();
             }
         }
-        
-
     }
 
     private void OnTriggerEnter(Collider other)
@@ -197,8 +187,8 @@ public class Follow : MonoBehaviour
         colliderName = other.gameObject.name;
         if (colliderName == "Start")
         {
-            startGameObject = other.gameObject;//get the object that holde  paths
-            path = startGameObject.transform.GetChild(0).GetComponent<Path>();//set default path to center
+            startGameObject = other.gameObject; //get the object that holde  paths
+            path = startGameObject.transform.GetChild(0).GetComponent<Path>(); //set default path to center
             ispressed = false;
             Hide(previous);
             previous = current;
@@ -234,16 +224,14 @@ public class Follow : MonoBehaviour
                 {
                     --enemyCount;
                     Destroy(YellowEnemy);
-                }
-                    
-            }
-                
+                }       
+            }  
         }
 
         if (colliderName == "End")
         {
-            ispressed = true;//end of choice
-            other.gameObject.transform.GetChild(0).gameObject.SetActive(true);//show wrong way panel
+            ispressed = true; //end of choice
+            other.gameObject.transform.GetChild(0).gameObject.SetActive(true); //show wrong way panel
             
             Reset();
         }
@@ -253,8 +241,6 @@ public class Follow : MonoBehaviour
             gameOver = true;
             SceneManager.LoadScene("GameOver");
         }
-
-
     }
 
     void Show(int i)
@@ -307,5 +293,4 @@ public class Follow : MonoBehaviour
         YellowEnemy.GetComponent<Enemy>().Go();
         go.SetActive(false);
     }
-
 }

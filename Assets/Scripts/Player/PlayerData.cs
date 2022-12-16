@@ -1,7 +1,5 @@
 using System;
-using System.Collections;
 using System.Collections.Generic;
-using System.Text;
 using UnityEngine;
 using System.IO;
 
@@ -66,7 +64,7 @@ public class PlayerData
 
         // Peut crypter les données ici 
 
-        // sauvegarder l'instance dans un fichier sur HDD
+        // Sauvegarder l'instance dans un fichier sur HDD
         File.WriteAllText(path, playerDataStr);
     }
 }

@@ -616,11 +616,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: da0a8732045e8ea42b6e6a5ffacd22de, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  extrasButton: {fileID: 5438801548334583159}
-  playButton: {fileID: 2764361996630339533}
-  optionsButton: {fileID: 1343704092040221610}
-  quitButton: {fileID: 4008049422302686573}
-  welcomeTexte: {fileID: 2949084403296979563}
+  _extrasButton: {fileID: 5438801548334583159}
+  _playButton: {fileID: 2764361996630339533}
+  _optionsButton: {fileID: 1343704092040221610}
+  _quitButton: {fileID: 4008049422302686573}
+  _welcomeTexte: {fileID: 2949084403296979563}
   QuitButtonClicked:
     m_PersistentCalls:
       m_Calls: []

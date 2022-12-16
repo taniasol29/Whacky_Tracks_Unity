@@ -5,11 +5,10 @@ using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 
 
-
 public class FadeOut : MonoBehaviour
 {
     CanvasGroup canGroup;
-    public float speed=10f;
+    public float speed = 10f;
     public  float a;
 
   
@@ -36,5 +35,4 @@ public class FadeOut : MonoBehaviour
         }
         LoadNextScene.go=true;
     }
-
 }

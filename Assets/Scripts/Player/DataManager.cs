@@ -1,9 +1,6 @@
-using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using System.IO;
-using System;
-using System.Text;
 
 public class DataManager 
 {
@@ -60,7 +57,6 @@ public class DataManager
             var playerData = JsonUtility.FromJson<PlayerData>(fileContent);
             // Ajout de l'instance à la liste des personnages
             AllPlayers.Add(playerData);
-
         }
     }
 }

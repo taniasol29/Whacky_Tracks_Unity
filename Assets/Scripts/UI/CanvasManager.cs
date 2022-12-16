@@ -5,27 +5,33 @@ using UnityEngine.SceneManagement;
 
 public class CanvasManager : MonoBehaviour
 {
-    [SerializeField] private HomePageController homePage;
-    [SerializeField] private LoadGamePageController loadGamePage;
-    [SerializeField] private NewPlayerPageController newPlayerPage;
-    [SerializeField] private ChoosePlayerPageController choosePlayerPage;
-    [SerializeField] private MainMenuPageController mainMenuPage;
+    [SerializeField] private HomePageController _homePage;
+    [SerializeField] private LoadGamePageController _loadGamePage;
+    [SerializeField] private NewPlayerPageController _newPlayerPage;
+    [SerializeField] private ChoosePlayerPageController _choosePlayerPage;
+    [SerializeField] private MainMenuPageController _mainMenuPage;
 
     private void Awake()
     {
-        homePage.StartButtonClicked.AddListener(ShowLoadGamePage);
+        // Home page
+        _homePage.StartButtonClicked.AddListener(ShowLoadGamePage);
 
-        loadGamePage.GoBackButtonClicked.AddListener(ShowHomePage);
-        loadGamePage.NewPlayerButtonClicked.AddListener(ShowNewPlayerPage);
-        loadGamePage.LoadGameButtonClicked.AddListener(ShowChoosePlayerPage);
+        // Load Page
+        _loadGamePage.GoBackButtonClicked.AddListener(ShowHomePage);
+        _loadGamePage.NewPlayerButtonClicked.AddListener(ShowNewPlayerPage);
+        _loadGamePage.LoadGameButtonClicked.AddListener(ShowChoosePlayerPage);
 
-        newPlayerPage.GoBackButtonClicked.AddListener(ShowHomePage);
-        newPlayerPage.EnterButtonClicked.AddListener(ShowMainMenuPage);
+        // New Player page
+        _newPlayerPage.GoBackButtonClicked.AddListener(ShowHomePage);
+        _newPlayerPage.EnterButtonClicked.AddListener(ShowMainMenuPage);
 
-        mainMenuPage.QuitButtonClicked.AddListener(Quit);
-        mainMenuPage.PlayButtonClicked.AddListener(LoadGameScene);
+        // Choose Player page
+        _choosePlayerPage.GoBackButtonClicked.AddListener(ShowHomePage);
+        _choosePlayerPage.PlayerSelected.AddListener(ShowMainMenuPage);
 
-        choosePlayerPage.GoBackButtonClicked.AddListener(ShowHomePage);
+        // Main Menu page
+        _mainMenuPage.QuitButtonClicked.AddListener(Quit);
+        _mainMenuPage.PlayButtonClicked.AddListener(LoadGameScene);
     }
 
     void Start()
@@ -38,35 +44,29 @@ public class CanvasManager : MonoBehaviour
         SceneManager.LoadScene(1);
     }
 
+    public void ShowNewPlayerPage()
+    {
+        _newPlayerPage.gameObject.SetActive(true);
+    }
+
     public void ShowChoosePlayerPage()
     {
-        loadGamePage.gameObject.SetActive(false);
-        newPlayerPage.gameObject.SetActive(false);
-        choosePlayerPage.gameObject.SetActive(true);
+        _choosePlayerPage.gameObject.SetActive(true);
     }
     
     public void ShowMainMenuPage()
     {
-        newPlayerPage.gameObject.SetActive(false);
-        mainMenuPage.gameObject.SetActive(true);
-    }
-    public void ShowNewPlayerPage()
-    {
-        loadGamePage.gameObject.SetActive(false);
-        newPlayerPage.gameObject.SetActive(true);
+        _mainMenuPage.gameObject.SetActive(true);
     }
     
-    public void ShowLoadGamePage() // désactiver toutes les pages sauf LoadGame
+    public void ShowLoadGamePage() 
     {
-        homePage.gameObject.SetActive(false);
-        loadGamePage.gameObject.SetActive(true);
+        _loadGamePage.gameObject.SetActive(true);
     }
 
     public void ShowHomePage()
     {
-        loadGamePage.gameObject.SetActive(false);
-        choosePlayerPage.gameObject.SetActive(false);
-        homePage.gameObject.SetActive(true);
+        _homePage.gameObject.SetActive(true);
     }
 
     public void Quit()

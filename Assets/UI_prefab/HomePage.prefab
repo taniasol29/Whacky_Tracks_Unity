@@ -27,6 +27,7 @@ RectTransform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 5252692811914889158}
   m_Father: {fileID: 0}
@@ -49,8 +50,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 09d1a4170e321ec4084c42506518b1de, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  startButton: {fileID: 7685154197219232902}
-  loadGamePage: {fileID: 0}
+  _startButton: {fileID: 7685154197219232902}
+  StartButtonClicked:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1 &351689280883096258
 GameObject:
   m_ObjectHideFlags: 0
@@ -79,6 +82,7 @@ RectTransform:
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 4661527669270494626}
   - {fileID: 7008077214454735840}
@@ -158,6 +162,7 @@ RectTransform:
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 8447703046416023655}
   m_Father: {fileID: 5252692811914889158}
@@ -292,6 +297,7 @@ RectTransform:
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 4661527669270494626}
   m_RootOrder: 0
@@ -426,6 +432,7 @@ RectTransform:
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 7008077214454735840}
   m_RootOrder: 0
@@ -558,6 +565,7 @@ RectTransform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 6926929365707409031}
   m_Father: {fileID: 5252692811914889158}
