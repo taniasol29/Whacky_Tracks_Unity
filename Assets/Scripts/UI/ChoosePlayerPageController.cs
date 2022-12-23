@@ -17,7 +17,7 @@ public class ChoosePlayerPageController : MonoBehaviour
         _goBackButton.onClick.AddListener(OnClickGoBackButton);
     }
 
-    private void OnEnable()
+    private void Start()
     {
         //for (int i = 0; i < 10; i++)
         //{

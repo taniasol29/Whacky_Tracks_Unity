@@ -6,25 +6,32 @@ using UnityEngine.UI;
 public class FadeScreen : MonoBehaviour
 {
     public RawImage rImage;
-    private float startTime;
-    private float fading;
+    private float startTime = 0.0f;
+    private float fading = 0.0f;
+    private float fadeTime = 2.0f;
     private bool startFade = false;
+    private Color fadeOutColor = new Color(1.0f, 1.0f, 1.0f, 0.0f);
 
     void Start()
     {
-        startTime = Time.time;
+        rImage.color = new Color(0.0f, 0.0f, 0.0f, 1.0f);
     }
 
     void Update()
     {
-        if (Time.time - startTime >= 1.0f) { startFade = true; }
+        startTime += Time.deltaTime;
 
-        if (startFade)
+        if (startTime >= 0.2f) { startFade = true; }
+
+        if (startFade && fading <= fadeTime)
         {
-            fading += Time.deltaTime / 3.0f;
-            fading = Mathf.Clamp01(fading);
-            Color color = new Color(1.0f, 1.0f, 1.0f, 0.0f);
-            rImage.color = Color.Lerp(Color.black, color, fading);
+            fading += Time.deltaTime;
+            rImage.color = Color.Lerp(Color.black, fadeOutColor, fading / fadeTime); 
         }
+
+        Debug.Log("Fading " + fading);
+
+        if (fading >= fadeTime)
+            rImage.gameObject.SetActive(false);
     }
 }
