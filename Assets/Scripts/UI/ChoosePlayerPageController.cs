@@ -2,6 +2,8 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.Events;
 using System;
+using System.Linq;
+using System.Collections.Generic;
 
 public class ChoosePlayerPageController : MonoBehaviour
 {

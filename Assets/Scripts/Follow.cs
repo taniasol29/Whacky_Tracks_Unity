@@ -64,11 +64,15 @@ public class Follow : MonoBehaviour
 
     int enemyCount = 3;
 
-
     private void Start()
     {
         prefabs[0]= Instantiate<GameObject>(rightPrefab);
+       
         prefabs[1]= Instantiate<GameObject>(leftPrefab);
+        // Don't count score on first tile
+        var tileSuccessTrigger = prefabs[1].GetComponentInChildren<TileSuccessTrigger>();
+        tileSuccessTrigger.isFirstTile = true;
+
         prefabs[2]= Instantiate<GameObject>(centerPrefab);
         prefabs[3]= Instantiate<GameObject>(rightPrefab);
         prefabs[4]= Instantiate<GameObject>(leftPrefab);
@@ -117,6 +121,7 @@ public class Follow : MonoBehaviour
 
                 if (enemyCount==0)
                 {
+                    ScoresManager.Instance.HandleGameOver();
                     SceneManager.LoadScene("Victory");
                     Debug.Log("victory");
                 }
@@ -238,6 +243,7 @@ public class Follow : MonoBehaviour
 
         if (colliderName == "GameOver")
         {
+            ScoresManager.Instance.HandleGameOver();
             gameOver = true;
             SceneManager.LoadScene("GameOver");
         }

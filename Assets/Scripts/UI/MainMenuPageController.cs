@@ -13,6 +13,7 @@ public class MainMenuPageController : MonoBehaviour
 
     public UnityEvent QuitButtonClicked;
     public UnityEvent PlayButtonClicked;
+    public UnityEvent ExtrasButtonClicked;
 
     void OnQuitButton()
     {
@@ -24,10 +25,17 @@ public class MainMenuPageController : MonoBehaviour
         PlayButtonClicked?.Invoke();
     }
 
+    private void OnExtrasButton() 
+    {
+        gameObject.SetActive(false);
+        ExtrasButtonClicked?.Invoke();
+    }
+
     private void Awake()
     {
         _quitButton.onClick.AddListener(OnQuitButton);
         _playButton.onClick.AddListener(OnPlayButton);
+        _extrasButton.onClick.AddListener(OnExtrasButton);
     }
 
     private void OnEnable()

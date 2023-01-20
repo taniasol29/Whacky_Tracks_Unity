@@ -10,6 +10,7 @@ public class CanvasManager : MonoBehaviour
     [SerializeField] private NewPlayerPageController _newPlayerPage;
     [SerializeField] private ChoosePlayerPageController _choosePlayerPage;
     [SerializeField] private MainMenuPageController _mainMenuPage;
+    [SerializeField] private ScoresPageController _scoresPage;
 
     private void Awake()
     {
@@ -32,6 +33,24 @@ public class CanvasManager : MonoBehaviour
         // Main Menu page
         _mainMenuPage.QuitButtonClicked.AddListener(Quit);
         _mainMenuPage.PlayButtonClicked.AddListener(LoadGameScene);
+        _mainMenuPage.ExtrasButtonClicked.AddListener(ShowScoresPage);
+
+        // Scores page
+        _scoresPage.GoBackButtonClicked.AddListener(ShowMainMenuPage);
+    }
+
+    //private void OnDisable()
+    //{
+    //    _mainMenuPage.QuitButtonClicked.RemoveListener(Quit);
+    //    //Continuer
+    //}
+
+    private void OnDestroy()
+    {
+        _mainMenuPage.QuitButtonClicked.RemoveListener(Quit);
+        // or
+        _mainMenuPage.QuitButtonClicked.RemoveAllListeners();
+        // Continuer
     }
 
     void Start()
@@ -67,6 +86,11 @@ public class CanvasManager : MonoBehaviour
     public void ShowHomePage()
     {
         _homePage.gameObject.SetActive(true);
+    }
+
+    public void ShowScoresPage()
+    {
+        _scoresPage.gameObject.SetActive(true);
     }
 
     public void Quit()

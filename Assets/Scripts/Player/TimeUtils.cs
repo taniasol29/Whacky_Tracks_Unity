@@ -4,7 +4,6 @@ public class TimeUtils
 {
     public static long GetCurrentUnixSeconds()
     {
-        DateTime currentTime = DateTime.Now;
-        return ((DateTimeOffset)currentTime).ToUnixTimeSeconds();
+        return DateTimeOffset.Now.ToUnixTimeSeconds();
     }
 }

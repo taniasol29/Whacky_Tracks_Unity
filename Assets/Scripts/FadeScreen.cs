@@ -29,7 +29,7 @@ public class FadeScreen : MonoBehaviour
             rImage.color = Color.Lerp(Color.black, fadeOutColor, fading / fadeTime); 
         }
 
-        Debug.Log("Fading " + fading);
+        //Debug.Log("Fading " + fading);
 
         if (fading >= fadeTime)
             rImage.gameObject.SetActive(false);
